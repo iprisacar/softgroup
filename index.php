@@ -9,7 +9,7 @@
 		<header>
 		<img src="logo.png">
 			<ul class="gor">
-		 	<li class="active"><a href="#">Soft Group</a></li>	
+		 	<li class="active"><a href="http://www.softgroup.ua">Soft Group</a></li>	
 		 	<li class="active"><a href="avtor.php">Автор</a></li>	
 		 	<li class="active"><a href="hello.php">Головна</a></li>
 		 	</ul>

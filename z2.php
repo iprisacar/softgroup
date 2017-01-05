@@ -9,7 +9,7 @@
 		<header>
 		<img src="logo.png">
 			<ul class="gor">
-		 	<li class="active"><a href="#">Soft Group</a></li>	
+		 	<li class="active"><a href="http://www.softgroup.ua">Soft Group</a></li>	
 		 	<li class="active"><a href="avtor.php">Автор</a></li>	
 		 	<li class="active"><a href="hello.php">Головна</a></li>
 		 	</ul>
@@ -33,26 +33,41 @@
 			<div class="content">
 				
 <form action="" method="post">
-    Имя:  <input type="text" name="item" /><br />
-    Email: <input type="text" name="email" /><br />
-    <input type="submit" name="submit" value="Отправь меня!" />
+    Текст:  <input type="text" name="item" /><br />
+    <input type="submit" name="submit" value="Обробити" />
 </form>
 
 <?php
 
 $item = $_POST["item"];//введенное предложение  
 $array = explode(" ",$item);  
+// $array = explode(",",$item);  
+// $array = explode(".",$item);  
+// $array = explode("!",$item);  
+// $array = explode("?",$item);   
+// $array = explode(":",$item);  
+// $array = explode(";",$item);  
+// $array = explode("-",$item);  
 $max["length"] = 0;  
-$max["word"] = "";  
+$max["word"] = "";
+$text="";
+  
     for($i=0;$i < count($array);$i++)  
     {  
         if(strlen($array[$i]) > $max["length"])  
         {  
-        $max["word"] = $array[$i];  
-        $max["length"] = strlen($array[$i]);  
-        }  
-    }  
-echo "Первое самое длинное слово: <b>".$max["word"]."[".$max["length"]."]</b>";
+        $max["length"] = strlen($array[$i]); 
+  		$max["word"]=$array[$i];
+        } 
+    }
+    echo "Заданий текст: <br>";
+   echo "$item <br>"  ;
+     for($i=0;$i < count($array);$i++)  {
+     	if(strlen($array[$i])== $max["length"]){
+     		$item=str_replace($array[$i], '',$item );}
+     }
+ 	echo "Відформатований текст: <br>";
+    echo $item;
 
 ?>
 		</div>
