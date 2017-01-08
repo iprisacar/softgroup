@@ -33,16 +33,7 @@
 			<div class="content">
 				
 <?php
- $n=50;
-$a=5;
- for ($i=5 ; $i < 50 ; $i++) { 
- 	$a=$a+1;
- 	
- 	if ($a==(pow(2,$a)-1)*pow(2,$a-1))
- 	echo a;
- }
  
-
 ?>
 		</div>
 		<div class="clear"></div>

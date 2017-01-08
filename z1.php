@@ -31,8 +31,27 @@
 		 	</ul>
 			</div>
 			<div class="content">
-				
-В розробці
+			<form action="" method="post">
+			    Введіть числo:<br>  <input type="text" name="item" /><br/>
+			    <input type="submit" name="submit" value="Обробити" />
+			</form>	
+<?php 
+$a=0;				
+$a= $_POST["item"];
+$divid=1;
+	echo "Досконалі числа до $a: ";
+	for ($n=5; $n <$a ; $n++) { 
+		$divid=1;
+	// перебираем возможные делители от 2 до n
+		for($d=2; $d<$n; $d++){ 
+			if($n%$d==0) 
+				$divid=$divid+$d;
+			}
+		if ($divid==$n) {
+			echo "$n ,";
+		}
+	}
+ ?>
 		</div>
 		<div class="clear"></div>
 		<footer>

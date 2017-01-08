@@ -67,8 +67,8 @@
 			clear: both;
 		}
 		.content{
-			float: right;
-			padding: 0 200px 0 0;
+			
+			margin: 0 0 0 300px;
 			font-family: arial;
 			font-size: 14px;
 		}
@@ -76,4 +76,8 @@
 			margin: 100px 0 0 0;
 			display: block;
 			text-align: center;
+		}
+		.content div{
+			font-family: arial;
+			font-size: 16px;
 		}

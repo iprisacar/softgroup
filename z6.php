@@ -32,22 +32,38 @@
 			</div>
 			<div class="content">
 				
+			<form action="" method="post">
+			    Текст:  <input type="text" name="item" /><br />
+			    <input type="submit" name="submit" value="Обробити" />
+			</form>
+
 <?php
- function isprime($n){
-	
-	// перебираем возможные делители от 2 до sqrt(n)
-	for($d=2; $d*$d<=$n; $d++){ 
-		// если разделилось нацело, то составное
-		if($n%$d==0) 
-			return false;
-		}
-	// если нет нетривиальных делителей, то простое
-	return true;
-	}
- echo isprime(149);
-$n="10 20 30";
-$b=$n+5;
-echo $b;
+
+$item = $_POST["item"];//введенное предложение  
+$array = explode(" ",$item);
+// $points;
+// $name;
+// for ($i=0; $i >=$array[0] ; $i+1) { 
+// 	$points[$i]=$array[$i+1];
+// 	$name[$i]=$array[$i+2];
+// }
+// for ($i=0; $i>=$array[0]; $i+1) { 
+//   echo  $points[$i];
+// 	echo $name[$i];
+// }
+
+$place_points[0]=$array[1];
+$place_name[0]=$array[2];
+for($i=1;$i<= $array[0];$i++){
+ if ($array[$i+2]>=$place_points[0]) {
+ 	$place_points[0]=$array[$i+2];
+ 	$place_name[0]=$array[$i+3];
+ }
+
+}
+echo $place_points[0];
+echo $place_name[0];
+
 ?>
 		</div>
 		<div class="clear"></div>

@@ -20,44 +20,66 @@
 		</header>
 		<div class="margin">
 			<div class="sidebar">
-
-				<ul class="left">
-		 	<li class="active"><a href="z1.php">Завдання 1</a></li>	
-		 	<li class="active"><a href="z2.php">Завдання 2</a></li>	
-		 	<li class="active"><a href="z3.php">Завдання 3</a></li>
-		 	<li class="active"><a href="z4.php">Завдання 4</a></li>	
-		 	<li class="active"><a href="z5.php">Завдання 5</a></li>	
-		 	<li class="active"><a href="z6.php">Завдання 6</a></li>
+			<ul class="left">
+			 	<li class="active"><a href="z1.php">Завдання 1</a></li>	
+			 	<li class="active"><a href="z2.php">Завдання 2</a></li>	
+			 	<li class="active"><a href="z3.php">Завдання 3</a></li>
+			 	<li class="active"><a href="z4.php">Завдання 4</a></li>	
+			 	<li class="active"><a href="z5.php">Завдання 5</a></li>	
+			 	<li class="active"><a href="z6.php">Завдання 6</a></li>
 		 	</ul>
 			</div>
 			<div class="content">
 			<form action="" method="post">
-			Введіть спочатку кількість чисел а потім числа через пробіл
-    Текст:  <input type="text" name="item" /><br />
-    <input type="submit" name="submit" value="Обробити" />
-</form>
-				
+			    Введіть числа через пробіл:<br>  <input type="text" name="item" /><br />
+			    <input type="submit" name="submit" value="Обробити" />
+			</form>		
 <?php
 $item= $_POST["item"];
 $array = explode(" ",$item);
-$a=$array[0];
- function isprime($a,$array){
-	$number=0;
+for ($i=0; $i < count($array); $i++) { echo $array[$i];}
+echo "<br>";
+	 $number=0;
+	
+	// for ($i=0; $i < count($array); $i++) { 
+	// $flag=0;		
+	// $n=$array[$i];
+	// // перебираем возможные делители от 2 до sqrt(n)
+	// for($d=2; $d<$n; $d++){ 
+	// 	// если разделилось нацело, то составное
+	// 	if($n%$d==0)
+
+	// 	$flag=0;
+	// 	$flag=1;		
+	// 	}
+	// // если нет нетривиальных делителей, то простое
+	
+	// if($flag==1)
+	// 	$number++;
+	
+	// }
+function isprime($n){
+	if($n==1) // 1 - не простое число
+		return false;
 	// перебираем возможные делители от 2 до sqrt(n)
-	for ($i=1; $i < $a; $i++) { 
-		
-	$n=$array[$i];
 	for($d=2; $d*$d<=$n; $d++){ 
 		// если разделилось нацело, то составное
-		if($n%$d!=0) 
-			$number++;
+		if($n%$d==0) 
+			return false;
 		}
 	// если нет нетривиальных делителей, то простое
-	
+	return true;
 	}
-	return $number;
+
+	for ($i=0; $i < count($array); $i++) { 
+
+		if(isprime($array[$i]))
+			$number++;
+
 	}
- echo isprime($a,$array);
+
+
+ echo "Кількість простих чисел= $number";
 
 ?>
 		</div>

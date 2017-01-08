@@ -40,31 +40,24 @@
 <?php
 
 $item = $_POST["item"];//введенное предложение  
-$array = explode(" ",$item);  
-// $array = explode(",",$item);  
-// $array = explode(".",$item);  
-// $array = explode("!",$item);  
-// $array = explode("?",$item);   
-// $array = explode(":",$item);  
-// $array = explode(";",$item);  
-// $array = explode("-",$item);  
+preg_match_all('/([a-zA-Zа-яА-Я]+)/',$item,$array);  
 $max["length"] = 0;  
 $max["word"] = "";
 $text="";
   
-    for($i=0;$i < count($array);$i++)  
+    for($i=0;$i < count($array[1]);$i++)  
     {  
-        if(strlen($array[$i]) > $max["length"])  
+        if(strlen($array[1][$i]) > $max["length"])  
         {  
-        $max["length"] = strlen($array[$i]); 
-  		$max["word"]=$array[$i];
+        $max["length"] = strlen($array[1][$i]); 
+  		$max["word"]=$array[1][$i];
         } 
     }
     echo "Заданий текст: <br>";
    echo "$item <br>"  ;
-     for($i=0;$i < count($array);$i++)  {
-     	if(strlen($array[$i])== $max["length"]){
-     		$item=str_replace($array[$i], '',$item );}
+     for($i=0;$i < count($array[1]);$i++)  {
+     	if(strlen($array[1][$i])== $max["length"]){
+     		$item=str_replace($array[1][$i], '',$item );}
      }
  	echo "Відформатований текст: <br>";
     echo $item;
