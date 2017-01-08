@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<title>Тест PHP</title>
@@ -8,10 +8,10 @@
 	<div class="container">
 		<header>
 		<img src="logo.png">
-			<ul class="gor">
-		 	<li class="active"><a href="http://www.softgroup.ua">Soft Group</a></li>	
-		 	<li class="active"><a href="avtor.php">Автор</a></li>	
-		 	<li class="active"><a href="hello.php">Головна</a></li>
+			<ul>
+		 	<li><a href="http://www.softgroup.ua">Soft Group</a></li>	
+		 	<li><a href="avtor.php">Автор</a></li>	
+		 	<li><a href="index.php">Головна</a></li>
 		 	</ul>
 				<div class="title">
 					<h1>SoftGroup</h1>
@@ -31,24 +31,7 @@
 		 	</ul>
 			</div>
 			<div class="content">
-				
-<?php
- function isprime($n){
-	
-	// перебираем возможные делители от 2 до sqrt(n)
-	for($d=2; $d*$d<=$n; $d++){ 
-		// если разделилось нацело, то составное
-		if($n%$d==0) 
-			return false;
-		}
-	// если нет нетривиальных делителей, то простое
-	return true;
-	}
- echo isprime(149);
-$n="10 20 30";
-$b=$n+5;
-echo $b;
-?>
+				в розробці)
 		</div>
 		<div class="clear"></div>
 		<footer>

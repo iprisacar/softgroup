@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<title>Тест PHP</title>
@@ -8,10 +8,10 @@
 	<div class="container">
 		<header>
 		<img src="logo.png">
-			<ul class="gor">
-		 	<li class="active"><a href="http://www.softgroup.ua">Soft Group</a></li>	
-		 	<li class="active"><a href="avtor.php">Автор</a></li>	
-		 	<li class="active"><a href="hello.php">Головна</a></li>
+			<ul>
+		 	<li><a href="http://www.softgroup.ua">Soft Group</a></li>	
+		 	<li><a href="avtor.php">Автор</a></li>	
+		 	<li><a href="index.php">Головна</a></li>
 		 	</ul>
 				<div class="title">
 					<h1>SoftGroup</h1>
@@ -36,7 +36,7 @@
 			    <input type="submit" name="submit" value="Обробити" />
 			</form>	
 <?php 
-$a=0;				
+$a=3;				
 $a= $_POST["item"];
 $divid=1;
 	echo "Досконалі числа до $a: ";

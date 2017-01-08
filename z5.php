@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<title>Тест PHP</title>
@@ -8,10 +8,10 @@
 	<div class="container">
 		<header>
 		<img src="logo.png">
-			<ul class="gor">
-		 	<li class="active"><a href="http://www.softgroup.ua">Soft Group</a></li>	
-		 	<li class="active"><a href="avtor.php">Автор</a></li>	
-		 	<li class="active"><a href="hello.php">Головна</a></li>
+			<ul>
+		 	<li><a href="http://www.softgroup.ua">Soft Group</a></li>	
+		 	<li><a href="avtor.php">Автор</a></li>	
+		 	<li><a href="index.php">Головна</a></li>
 		 	</ul>
 				<div class="title">
 					<h1>SoftGroup</h1>
@@ -31,10 +31,33 @@
 		 	</ul>
 			</div>
 			<div class="content">
-				
-<?php
- 
-?>
+			<?php
+				$item = $_POST["item"];//введенное предложение  
+				$array = explode(" ",$item);
+				//preg_match_all('/([a-zA-Zа-яА-Я]+)/',$item,$array);
+				$array_numeric[0]=1;
+				for($i=1;$i < count($array);$i++){
+					$array_numeric[$i]=0;
+				}
+				for($i=1;$i < count($array);$i++){
+					for($x=$i;$x>=0;--$x){
+						if ($array[$i]==$array[$x]) {
+							$array_numeric[$i]++;
+						}
+				  	}
+				} 
+			?>
+			<form action="" method="post">
+			<textarea  name="item"></textarea>
+			<textarea  name="cout"><?php
+				 for($i=0;$i < count($array);$i++) {
+					echo $array_numeric[$i]-1;
+					echo " ";
+				 } 
+				 ?>
+			</textarea>
+			 <br><input type="submit" name="submit" value="Обробити" />
+			 </form>
 		</div>
 		<div class="clear"></div>
 		<footer>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<title>Тест PHP</title>
@@ -32,39 +32,50 @@
 			</div>
 			<div class="content">
 				
-			<form action="" method="post">
-			    Текст:  <input type="text" name="item" /><br />
-			    <input type="submit" name="submit" value="Обробити" />
-			</form>
-
 <?php
 
-$item = $_POST["item"];//введенное предложение  
-$array = explode(" ",$item);
-// $points;
-// $name;
-// for ($i=0; $i >=$array[0] ; $i+1) { 
-// 	$points[$i]=$array[$i+1];
-// 	$name[$i]=$array[$i+2];
-// }
-// for ($i=0; $i>=$array[0]; $i+1) { 
-//   echo  $points[$i];
-// 	echo $name[$i];
-// }
-
-$place_points[0]=$array[1];
-$place_name[0]=$array[2];
-for($i=1;$i<= $array[0];$i++){
- if ($array[$i+2]>=$place_points[0]) {
- 	$place_points[0]=$array[$i+2];
- 	$place_name[0]=$array[$i+3];
- }
-
-}
-echo $place_points[0];
-echo $place_name[0];
 
 ?>
+			<form action="" method="post">
+			   <textarea  name="item">
+			   	<?php
+			   	$item = $_POST["item"]; 
+			   	 ?>
+			в розробці)
+			   </textarea>
+			   <textarea  name="cout"><?php
+			   
+				// $array = explode(" ",$item);
+				// for ($i=0; $i <=$array[0] ; $i+1) { 
+				// $points[$i]=0;
+				// $name[$i]=" ";}
+				// for ($i=0; $i <=$array[0] ; $i++) { 
+				// 	$points[$i]=$array[$i+1];
+				// 	$name[$i]=$array[$i+2];
+				// }
+
+
+				// $place_points[0]=$array[1];
+				// $place_name[0]=$array[2];
+				// for($i=1;$i<= $array[0];$i++){
+				//  if ($array[$i+2]>=$place_points[0]) {
+				//  	$place_points[0]=$array[$i+2];
+				//  	$place_name[0]=$array[$i+3];
+				//  }
+
+				// }
+				// echo $place_points[0];
+				// echo $place_name[0];
+				 
+			  //  	 for ($i=0; $i>=$array[0]; $i+1) { 
+ 				//  echo  $points[$i];
+				 // echo $name[$i];
+				 //} ?>
+			   </textarea>
+			    <br><input type="submit" name="submit" value="Обробити" />
+
+			</form>
+
 		</div>
 		<div class="clear"></div>
 		<footer>

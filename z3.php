@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<title>Тест PHP</title>
@@ -8,10 +8,10 @@
 	<div class="container">
 		<header>
 		<img src="logo.png">
-			<ul class="gor">
-		 	<li class="active"><a href="http://www.softgroup.ua">Soft Group</a></li>	
-		 	<li class="active"><a href="avtor.php">Автор</a></li>	
-		 	<li class="active"><a href="hello.php">Головна</a></li>
+			<ul>
+		 	<li><a href="http://www.softgroup.ua">Soft Group</a></li>	
+		 	<li><a href="avtor.php">Автор</a></li>	
+		 	<li><a href="index.php">Головна</a></li>
 		 	</ul>
 				<div class="title">
 					<h1>SoftGroup</h1>
@@ -37,27 +37,8 @@
 <?php
 $item= $_POST["item"];
 $array = explode(" ",$item);
-for ($i=0; $i < count($array); $i++) { echo $array[$i];}
 echo "<br>";
 	 $number=0;
-	
-	// for ($i=0; $i < count($array); $i++) { 
-	// $flag=0;		
-	// $n=$array[$i];
-	// // перебираем возможные делители от 2 до sqrt(n)
-	// for($d=2; $d<$n; $d++){ 
-	// 	// если разделилось нацело, то составное
-	// 	if($n%$d==0)
-
-	// 	$flag=0;
-	// 	$flag=1;		
-	// 	}
-	// // если нет нетривиальных делителей, то простое
-	
-	// if($flag==1)
-	// 	$number++;
-	
-	// }
 function isprime($n){
 	if($n==1) // 1 - не простое число
 		return false;
